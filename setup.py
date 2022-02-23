@@ -19,7 +19,7 @@ setup(
     long_description=getReadMe(),
     long_description_content_type="text/markdown",
     packages=find_packages(),
-    install_requires = [],
+    install_requires = ["DateTime==4.4"],
     keywords=["python", "tools"],
     classifiers=[
         "Programming Language :: Python :: 3",
