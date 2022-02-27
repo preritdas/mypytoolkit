@@ -35,3 +35,16 @@ kit.are_docs_same(original_dir: str, new_dir: str)
 ```
 
 It returns a boolean, `True` or `False`, depending on whether the contents of the two files are identical. There is no grey area.
+
+## Math
+
+Added a `LinearEquation` class that takes attributes of slope and intercept on instantiation. It has a `plot()` method which plots the linear graph. For example:
+
+```python
+import mypytoolkit as kit
+
+equation = kit.LinearEquation(slope = 4, intercept = 10)
+equation.plot(interval = 1000)
+```
+
+This will output a `matplotlib` plot of the linear equation from 0 to 1000.
