@@ -8,7 +8,7 @@ def time_now(int_times: bool = False):
         time_hours, time_mins = dt.now().strftime("%H-%M").split(sep = '-')
         return (int(time_hours), int(time_mins))
 
-def time_decminal():
+def time_decimal():
     """Returns the time as a float. 08-30 is 8.5."""
     time_hours, time_mins = time_now(int_times = True)
     fraction_mins = time_mins/60
