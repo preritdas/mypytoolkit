@@ -10,9 +10,15 @@ import mypytoolkit as kit
 
 ## Dates and Times
 
-`kit.time_now()` returns a string of the current time in the format "%H-%M". Midnight is "00-00" and 8:35 a.m. is "08-35". 10 p.m. is "22-00". 
+### Time Now
+`kit.time_now()` returns a string of the current time in the format "%H-%M". Midnight is "00-00" and 8:35 a.m. is "08-35". 10 p.m. is "22-00". That's without optional parameters.
 
+The optional parameter `int_times: bool` will allow the function to return a tuple instead of a string. If you call `kit.time_now(int_times = True)`, and if the time is 8:35 a.m., you will receive a tuple `(8, 35)` where each element is an integer. This is useful for performing relative time actions within a program that are hour/minute independent. 
+
+----
 `kit.today_date()` returns a string of the current date in the format "%Y-%M-%D", where Feb 22, 2022, is "2022-02-22". 
+
+`kit.time_decimal()` returns a float of the time. For example, if it is 8:45 a.m., the function will return 8.75. 
 
 ## Python Tools
 
