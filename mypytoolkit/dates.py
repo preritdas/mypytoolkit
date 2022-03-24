@@ -18,3 +18,8 @@ def time_decimal():
 def today_date():
     """Returns today's date in string format 2022-02-22."""
     return str(dt.now().date())
+
+def weekday_int():
+    """Returns the integer 1-7 of weekday where 1 is Monday."""
+    iso_weekday = dt.now().isoweekday()
+    return int(iso_weekday)
