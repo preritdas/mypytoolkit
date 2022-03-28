@@ -32,7 +32,11 @@ def tprint(obj):
 
 Super simple but it makes a night and day difference when debugging in lightspeed.
 
-## Document Checks
+## Files
+
+Tools for working with files.
+
+### Same Document Contents
 
 `kit.are_docs_same()` will tell you if two documents (of any type) have the _exact_ same contents. It takes two parameters. 
 
@@ -41,6 +45,40 @@ kit.are_docs_same(original_dir: str, new_dir: str)
 ```
 
 It returns a boolean, `True` or `False`, depending on whether the contents of the two files are identical. There is no grey area.
+
+### Appending Content to Files
+
+`kit.append_by_query()` will append content to a file in a line below the first occurrence of a query. For example, if `test.txt` has the contents:
+
+```
+this is line 1!
+line 2 is here.
+hello people!
+line number 4.
+```
+
+And we run:
+
+```python
+import mypytoolkit as kit
+
+kit.append_by_query(
+    query = 'hello', 
+    content = 'Just added this.', 
+    file_path = 'test.txt',
+    insert_above = False # unnecessary, it is by default
+)
+```
+
+`test.txt` is modified in place and is now:
+
+```
+this is line 1!
+line 2 is here.
+hello people!
+Just added this.
+line number 4.
+```
 
 ## Math
 

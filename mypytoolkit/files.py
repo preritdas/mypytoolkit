@@ -24,3 +24,28 @@ def are_docs_same(original_dir: str, new_dir: str):
     else:
         print("Contents do not match.")
         return False
+
+def append_by_query(query: str, content: str, file_path: str, insert_above: bool = False):
+    # Open the file and get the lines
+    with open(file_path, 'r') as f:
+        data = f.readlines()
+
+    # Check for the <title>
+    found_the_line = False # exception handling
+    for pos, line in enumerate(data):
+        if query in line:
+            found_the_line = True
+            break
+    
+    # Quit the program if <title> wasn't found
+    if not found_the_line:
+        raise Exception(f"{query} not found in any lines of {file_path}.") 
+
+    # Insert after? Increase line number by 1.
+    if not insert_above:
+        pos = pos = 1
+
+    # Append the string
+    data.insert(pos, (content + '\n'))
+    with open(file_path, 'w') as f:
+        f.writelines(data)

@@ -1,5 +1,5 @@
 # Document checker
-from mypytoolkit.samedocs import *
+from mypytoolkit.files import *
 
 # Date and time
 from mypytoolkit.dates import *
