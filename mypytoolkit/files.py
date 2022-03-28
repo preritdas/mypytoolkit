@@ -43,7 +43,7 @@ def append_by_query(query: str, content: str, file_path: str, insert_above: bool
 
     # Insert after? Increase line number by 1.
     if not insert_above:
-        pos = pos = 1
+        pos += 1
 
     # Append the string
     data.insert(pos, (content + '\n'))
