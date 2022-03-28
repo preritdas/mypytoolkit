@@ -26,6 +26,14 @@ def are_docs_same(original_dir: str, new_dir: str):
         return False
 
 def append_by_query(query: str, content: str, file_path: str, insert_above: bool = False):
+    """
+    Required args: query, content, and file path. 
+    Optional args: insert_above
+
+    Searches through the contents of the target file and inserts content a line below \
+        the first occurence. 
+    """
+    
     # Open the file and get the lines
     with open(file_path, 'r') as f:
         data = f.readlines()

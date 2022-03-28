@@ -22,6 +22,10 @@ The optional parameter `int_times: bool` will allow the function to return a tup
 
 ## Python Tools
 
+Simple Python-specific tools to make life easier, from `print` options to functions for working with iterables.
+
+### Type Printing
+
 `kit.tprint()` displays the contents of an object along with its type. I got fed up of constantly writing `print(obj, type(obj))` when debugging so I found myself constantly defining a `tprint()` function:
 
 ```python
@@ -31,6 +35,12 @@ def tprint(obj):
 ```
 
 Super simple but it makes a night and day difference when debugging in lightspeed.
+
+### Iterable Counting
+
+`kit.count()` will accept an iterable item and a value. It returns an integer of the exact number of occurrences of the value in the iterable. Many iterable objects have in-built class methods for counting values (`iterable_object.count()` for example). But many iterables returned by APIs, for example, don't, so it makes sense to have some global method for counting values. 
+
+This way, many objects can be passed to the method, too.
 
 ## Files
 
