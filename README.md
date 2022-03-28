@@ -20,6 +20,8 @@ The optional parameter `int_times: bool` will allow the function to return a tup
 
 `kit.time_decimal()` returns a float of the time. For example, if it is 8:45 a.m., the function will return 8.75. 
 
+`kit.weekly_time_decimal()` returns a float of how far you're in a week. For example, midnight on Monday is `0`, noon on Wednesday is `2.5`, and 4 p.m. on Sunday is `6.66`. 
+
 ## Python Tools
 
 Simple Python-specific tools to make life easier, from `print` options to functions for working with iterables.
