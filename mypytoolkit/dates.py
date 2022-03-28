@@ -23,3 +23,13 @@ def weekday_int():
     """Returns the integer 1-7 of weekday where 1 is Monday."""
     iso_weekday = dt.now().isoweekday()
     return int(iso_weekday)
+
+def weekly_time_decimal():
+    """
+    Returns decimal time within a week. For example, Tuesday noon is 1.5.
+    Values start at 0, midnight on Monday.
+    """
+
+    daily_fraction = time_decimal()/24
+    today_weekday = weekday_int() - 1
+    return float(today_weekday + daily_fraction)
