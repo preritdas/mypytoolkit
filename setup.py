@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 VERSION = "1.3.1"
 DESCRIPTION = (
-    "A few basic tools I feel are missing in the standard Python distribution."
+    "Basic tools I feel are missing in the standard Python distribution."
 )
 
 def getReadMe():
