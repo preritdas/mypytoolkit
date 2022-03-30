@@ -62,6 +62,10 @@ It returns a boolean, `True` or `False`, depending on whether the contents of th
 
 `kit.append_by_query()` will append content to a file in a line below the first occurrence of a query. For example, if `test.txt` has the contents:
 
+View a demonstration:
+
+[![asciicast](https://asciinema.org/a/4lHkZOkC4kfzZMgRQs3S8wRVn.svg)](https://asciinema.org/a/4lHkZOkC4kfzZMgRQs3S8wRVn)
+
 ```
 this is line 1!
 line 2 is here.
