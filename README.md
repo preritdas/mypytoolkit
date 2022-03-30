@@ -60,11 +60,13 @@ It returns a boolean, `True` or `False`, depending on whether the contents of th
 
 ### Appending Content to Files
 
-`kit.append_by_query()` will append content to a file in a line below the first occurrence of a query. For example, if `test.txt` has the contents:
+`kit.append_by_query()` will append content to a file in a line below the first occurrence of a query. 
 
-View a demonstration:
+See a demonstration:
 
 [![asciicast](https://asciinema.org/a/4lHkZOkC4kfzZMgRQs3S8wRVn.svg)](https://asciinema.org/a/4lHkZOkC4kfzZMgRQs3S8wRVn)
+
+Here is a written example. If `test.txt` has the contents:
 
 ```
 this is line 1!
