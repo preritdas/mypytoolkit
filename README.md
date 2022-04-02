@@ -98,6 +98,13 @@ Just added this.
 line number 4.
 ```
 
+| Parameter | Necessity | Behavior |
+| --- | --- | --- |
+| `query` | Required | The first occurrence of this string is where the toolkit will look to insert `content` (above or below depending on `insert_above`). |
+| `content` | Required | The content inserted above or below the first occurrence of `query` in the document. |
+| `file_path` | Required | A string of the path to the file the toolkit will search through and write in. | 
+| `insert_above` | Optional | Boolean. By default, `insert_above = False`, and the toolkit will insert `content` the line below the first occurrence of `query`. If `True`, the toolkit will insert `content` in a line above instead. |
+
 ## Math
 
 Added a `LinearEquation` class that takes attributes of slope and intercept on instantiation. It has a `plot()` method which plots the linear graph. For example:
