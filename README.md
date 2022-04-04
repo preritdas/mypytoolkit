@@ -22,6 +22,21 @@ The optional parameter `int_times: bool` will allow the function to return a tup
 
 `kit.weekly_time_decimal()` returns a float of how far you're in a week. For example, midnight on Monday is `0`, noon on Wednesday is `2.5`, and 4 p.m. on Sunday is `6.66`. 
 
+`kit.time_seconds()` returns the current number of seconds past the minute. For example, if the time is 06:35:23, the function will return `'23'` as a string. Passing in the optional parameter `int_output: bool = False` as `int_output = True` will output `23` as an integer instead of a string. This is useful for timing programs.
+
+For example, a function like `kit.time_seconds()` enables logic such as:
+
+```python
+import mypytoolkit as kit
+import time
+
+while True:
+    if kit.time_seconds(True) == 0:
+        # do some task on the minute.
+    
+    time.sleep(1)
+```
+
 ## Python Tools
 
 Simple Python-specific tools to make life easier, from `print` options to functions for working with iterables.
