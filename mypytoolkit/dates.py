@@ -15,6 +15,12 @@ def time_decimal():
     fractional_time = time_hours + fraction_mins
     return float(fractional_time)
 
+def time_seconds(int_output: bool = False):
+    if int_output:
+        return int(dt.now().strftime("%S"))
+    else:
+        return dt.now().strftime("%S")
+
 def today_date():
     """Returns today's date in string format 2022-02-22."""
     return str(dt.now().date())
