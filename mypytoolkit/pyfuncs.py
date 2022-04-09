@@ -9,3 +9,10 @@ def count(iterable, value):
         if item == value:
             count += 1
     return int(count)
+
+def reverse_dict(dic: dict):
+    """Reverses the keys and values in a dictionary."""
+    new_dict = {}
+    for key, val in dic.items():
+        new_dict[val] = key
+    return new_dict
