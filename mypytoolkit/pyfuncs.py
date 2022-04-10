@@ -12,6 +12,12 @@ def count(iterable, value):
 
 def reverse_dict(dic: dict):
     """Reverses the keys and values in a dictionary."""
+    # Check that values are single items
+    accepted_types = [str, int, float]
+    for value in dic.values():
+        if type(value) not in accepted_types:
+            raise Exception("Dictionary values must be single, immutable objects.")
+
     new_dict = {}
     for key, val in dic.items():
         new_dict[val] = key
