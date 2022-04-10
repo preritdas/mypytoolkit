@@ -142,5 +142,6 @@ The finance module must be called directly. It's contents are not imported to th
 Given a list of returns (each item of numeric format, not percentage), and a risk-free rate, `kit.finance.sharpe_ratio()` will return the Sharpe Ratio of the investment. 
 
 | Parameter | Format | Necessity | Behavior | 
+| --- | --- | --- | --- |
 | `returns` | `list` | Required | Is used to compute the standard deviation and mean, necessary to result a Sharpe Ratio. |
 | `risk_free` | `float` | Required | Is used to compare statistics on the return with the best risk-free investment at the time. Necessary as Sharpe Ratio is a risk-factored metric. |
