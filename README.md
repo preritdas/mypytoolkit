@@ -132,3 +132,15 @@ equation.plot(interval = 1000)
 ```
 
 This will output a `matplotlib` plot of the linear equation from 0 to 1000.
+
+## Finance
+
+The finance module must be called directly. It's contents are not imported to the main namespace like the other modules. To call `finance` functions you have to use `kit.finance.function()`. 
+
+### Sharpe Ratio
+
+Given a list of returns (each item of numeric format, not percentage), and a risk-free rate, `kit.finance.sharpe_ratio()` will return the Sharpe Ratio of the investment. 
+
+| Parameter | Format | Necessity | Behavior | 
+| `returns` | `list` | Required | Is used to compute the standard deviation and mean, necessary to result a Sharpe Ratio. |
+| `risk_free` | `float` | Required | Is used to compare statistics on the return with the best risk-free investment at the time. Necessary as Sharpe Ratio is a risk-factored metric. |
