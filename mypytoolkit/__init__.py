@@ -9,3 +9,6 @@ from mypytoolkit.math import LinearEquation
 
 # General Python tools
 from mypytoolkit.pyfuncs import *
+
+# Finance
+from mypytoolkit import finance
