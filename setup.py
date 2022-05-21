@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.4.0"
+VERSION = "1.4.2"
 DESCRIPTION = (
     "Basic tools I feel are missing in the standard Python distribution."
 )
@@ -19,7 +19,7 @@ setup(
     long_description=get_read_me(),
     long_description_content_type="text/markdown",
     packages=find_packages(),
-    install_requires = ["DateTime", "matplotlib", "numpy"],
+    install_requires = ["DateTime", "matplotlib", "numpy", "pandas"],
     keywords=["python", "tools"],
     classifiers=[
         "Programming Language :: Python :: 3",

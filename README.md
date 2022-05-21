@@ -59,6 +59,10 @@ Super simple but it makes a night and day difference when debugging in lightspee
 
 This way, many objects can be passed to the method, too.
 
+### DataFrame NaN Values
+
+`kit.remove_nan_df_rows()` takes a `pd.DataFrame` input and returns a new DataFrame without any rows that contained a NaN value.
+
 ## Files
 
 Tools for working with files.
