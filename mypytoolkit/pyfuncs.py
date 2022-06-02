@@ -16,7 +16,9 @@ def count(iterable, value):
     return int(count)
 
 
-def closest_value(iterable, value):
+def closest_value_idx(iterable, value):
+    """Returns the index of the closest occurance of
+    `value` in `iterable`."""
     def difference(item):
         return abs(value - item)
 
