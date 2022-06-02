@@ -16,14 +16,17 @@ def count(iterable, value):
     return int(count)
 
 
-def closest_value_idx(iterable, value):
+def closest_value(iterable, value, return_idx=False):
     """Returns the index of the closest occurance of
     `value` in `iterable`."""
     def difference(item):
         return abs(value - item)
 
-    differences = map(difference, iterable)
-    return iterable[np.argmin(differences)]
+    differences = list(map(difference, iterable))
+    if return_idx:
+        return np.argmin(differences)
+    else:
+        return iterable[np.argmin(differences)]
 
 
 def reverse_dict(dic: dict):
