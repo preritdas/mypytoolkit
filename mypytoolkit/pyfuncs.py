@@ -16,6 +16,14 @@ def count(iterable, value):
     return int(count)
 
 
+def closest_value(iterable, value):
+    def difference(item):
+        return abs(value - item)
+
+    differences = map(difference, iterable)
+    return iterable[np.argmin(differences)]
+
+
 def reverse_dict(dic: dict):
     """Reverses the keys and values in a dictionary."""
     # Check that values are single items

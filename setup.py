@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.4.2"
+VERSION = "1.4.3"
 DESCRIPTION = (
     "Basic tools I feel are missing in the standard Python distribution."
 )
