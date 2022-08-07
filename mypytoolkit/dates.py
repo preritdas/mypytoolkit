@@ -55,3 +55,34 @@ def weekly_time_decimal() -> float:
     daily_fraction = time_decimal()/24
     today_weekday = weekday_int() - 1
     return float(today_weekday + daily_fraction)
+
+
+def weekday_name(isoweekday: int, sunday_start: bool = False) -> str:
+    """
+    Where 1 is Monday, returns the name of the weekday based on the given 
+    isoweekday value.
+
+    Pass in sunday_start = True for 1 to return Sunday instead of Monday, and
+    so on.
+    """
+    if not isinstance(isoweekday, int): 
+        raise ValueError("isoweekday must be an int.")
+
+    if not 1 <= isoweekday <= 7: 
+        raise ValueError("isoweekday must be between 1 and 7.")
+
+    weekdays = {
+        0: "Sunday",
+        1: "Monday",
+        2: "Tuesday",
+        3: "Wednesday",
+        4: "Thursday",
+        5: "Friday",
+        6: "Saturday",
+        7: "Sunday"
+    }
+
+    if sunday_start: 
+        isoweekday = (isoweekday + 6) % 7
+
+    return weekdays[isoweekday]
