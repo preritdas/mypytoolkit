@@ -37,7 +37,8 @@ def append_by_query(
     query: str, 
     content: str, 
     file: str | Document, 
-    insert_above: bool = False
+    insert_above: bool = False,
+    replace: bool = False
 ) -> None:
     """
     Required args: query, content, and file path. 
@@ -62,9 +63,18 @@ def append_by_query(
         raise Exception(f"{query} not found in any lines of {file_path}.") 
 
     # Insert after? Increase line number by 1.
-    if not insert_above:
-        pos += 1
+    if not insert_above: pos += 1
 
     # Append the string
     data.insert(pos, (content + '\n'))
+    if replace: del data[pos - 1]  # delete the old guy
     with open(file_path, 'w') as f: f.writelines(data)
+
+
+if __name__ == '__main__':
+    append_by_query(
+        query = "<title>",
+        content = "<title>Better title!</title>",
+        file = 'doc.txt',
+        replace = True
+    )
