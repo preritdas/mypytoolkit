@@ -38,7 +38,8 @@ def append_by_query(
     content: str, 
     file: str | Document, 
     insert_above: bool = False,
-    replace: bool = False
+    replace: bool = False,
+    encoding: str = "utf-8"
 ) -> None:
     """
     Required args: query, content, and file path. 
@@ -49,7 +50,7 @@ def append_by_query(
     """
     # Get contents
     if isinstance(file, str):
-        with open(file, 'r') as f: data = f.readlines()
+        with open(file, 'r', encoding=encoding) as f: data = f.readlines()
         file_path = file
     elif isinstance(file, Document):
         data = file.contents()
@@ -68,13 +69,5 @@ def append_by_query(
     # Append the string
     data.insert(pos, (content + '\n'))
     if replace: del data[pos - 1]  # delete the old guy
-    with open(file_path, 'w') as f: f.writelines(data)
-
-
-if __name__ == '__main__':
-    append_by_query(
-        query = "<title>",
-        content = "<title>Better title!</title>",
-        file = 'doc.txt',
-        replace = True
-    )
+    with open(file_path, 'w', encoding=encoding) as f: 
+        f.writelines(data)
