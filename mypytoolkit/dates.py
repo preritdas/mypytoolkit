@@ -51,7 +51,6 @@ def weekly_time_decimal() -> float:
     Returns decimal time within a week. For example, Tuesday noon is 1.5.
     Values start at 0, midnight on Monday.
     """
-
     daily_fraction = time_decimal()/24
     today_weekday = weekday_int() - 1
     return float(today_weekday + daily_fraction)
