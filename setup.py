@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+import os
 
 VERSION = "1.5.41"
 DESCRIPTION = (
@@ -11,11 +12,6 @@ def get_read_me():
         return f.read()
 
 
-def read_requirements():
-    with open("requirements.txt", encoding="utf-8") as f:
-        return f.read().splitlines()
-
-
 # Setting up
 setup(
     name="mypytoolkit",
@@ -26,7 +22,7 @@ setup(
     long_description=get_read_me(),
     long_description_content_type="text/markdown",
     packages=find_packages(),
-    install_requires = read_requirements(),
+    install_requires = ['DateTime', 'matplotlib', 'numpy', 'pandas'],
     keywords=["python", "tools"],
     classifiers=[
         "Programming Language :: Python :: 3",
