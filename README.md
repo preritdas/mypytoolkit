@@ -1,3 +1,5 @@
+![pypi](https://github.com/preritdas/mypytoolkit/actions/workflows/python-publish.yml/badge.svg)
+
 # My Python Toolkit
 
 This is just a miscellaneous collection of some tools I use regularly that I decided to compile into one package for easy use by mainly me. All examples will assume the package has been imported as `kit`. 
