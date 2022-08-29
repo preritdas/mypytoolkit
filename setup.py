@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.5.4"
+VERSION = "1.5.41"
 DESCRIPTION = (
     "Basic tools I feel are missing in the standard Python distribution."
 )
@@ -12,7 +12,7 @@ def get_read_me():
 
 
 def read_requirements():
-    with open("requirements.txt") as f:
+    with open("requirements.txt", encoding="utf-8") as f:
         return f.read().splitlines()
 
 
