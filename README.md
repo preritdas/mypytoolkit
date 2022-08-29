@@ -1,4 +1,6 @@
+![pytest](https://github.com/preritdas/mypytoolkit/actions/workflows/pytest.yml/badge.svg)
 ![pypi](https://github.com/preritdas/mypytoolkit/actions/workflows/python-publish.yml/badge.svg)
+
 
 # My Python Toolkit
 
