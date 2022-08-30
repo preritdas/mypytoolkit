@@ -2,11 +2,11 @@ from mypytoolkit import dates
 
 
 def test_time_now():
-    dates.time_now()
+    assert dates.time_now()
 
 
 def test_time_decimal():
-    dates.time_decimal()
+    assert dates.time_decimal()
 
 
 def test_weekly_time_decimal():
