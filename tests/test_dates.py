@@ -14,7 +14,7 @@ def test_weekly_time_decimal():
 
 
 def test_weekday_name():
-    assert dates.weekday_name(1) == "MondayNOPE"
+    assert dates.weekday_name(1) == "Monday"
     assert dates.weekday_name(7) == "Sunday"
     
     assert dates.weekday_name(1, sunday_start=True) == "Sunday"
