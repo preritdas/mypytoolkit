@@ -1,5 +1,6 @@
 ![pytest](https://github.com/preritdas/mypytoolkit/actions/workflows/pytest.yml/badge.svg)
 ![pypi](https://github.com/preritdas/mypytoolkit/actions/workflows/python-publish.yml/badge.svg)
+[![PyPI version](https://badge.fury.io/py/mypytoolkit.svg)](https://badge.fury.io/py/mypytoolkit)
 
 
 # My Python Toolkit
