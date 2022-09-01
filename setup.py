@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 
-VERSION = "1.5.45"
+VERSION = "1.5.46"
 DESCRIPTION = (
     "Basic tools I feel are missing in the standard Python distribution."
 )
