@@ -1,5 +1,5 @@
 ![pytest](https://github.com/preritdas/mypytoolkit/actions/workflows/pytest.yml/badge.svg)
-![coverage](https://github.com/preritdas/mypytoolkit/tests/badge.svg)
+![coverage](https://github.com/preritdas/mypytoolkit/blob/master/tests/badge.svg)
 ![versions](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue)
 ![pypi](https://github.com/preritdas/mypytoolkit/actions/workflows/python-publish.yml/badge.svg)
 [![PyPI version](https://badge.fury.io/py/mypytoolkit.svg)](https://badge.fury.io/py/mypytoolkit)
