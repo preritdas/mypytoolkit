@@ -4,8 +4,14 @@ on: [push, pull_request]
 
 jobs:
   test:
+  
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest", "macos-latest", "windows-latest"]
+        python: ["3.7", "3.8", "3.9", "3.10"]
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout repository code
@@ -14,26 +20,31 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: ${{ matrix.python }}
 
       - name: Install package dependencies
         run: |
-          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -U pip wheel
           pip install -r requirements.txt
 
       - name: Install test dependencies
-        run: pip install -U pytest-cov coverage-badge
+        run: |
+          pip install -U pytest
+          pip install -U pytest-cov coverage-badge
 
       - name: Run tests with pytest
         run: |
           python -m pytest --cov
 
       - name: Update coverage badge
+        if: always()
         continue-on-error: true
-        run: |
-          coverage-badge -o tests/badge.svg -f
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add tests/badge.svg
-          git commit --author="Prerit Das <preritdas@gmail.com>" -m "Coverage badge updated after tests."
-          git push
+        uses: knicknic/os-specific-run@v1.0.3
+        with:
+          linux:
+            coverage-badge -o tests/badge.svg -f
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add tests/badge.svg
+            git commit --author="Prerit Das <preritdas@gmail.com>" -m "Coverage badge updated after tests."
+            git push
