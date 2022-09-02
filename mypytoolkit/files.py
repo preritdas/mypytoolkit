@@ -2,6 +2,7 @@
 Working with files.
 """
 import os
+from typing import Union
 
 
 class Document:
@@ -37,7 +38,7 @@ def are_docs_same(original_dir: str, new_dir: str) -> bool:
 def append_by_query(
     query: str, 
     content: str, 
-    file: Document, 
+    file: Union[str, Document], 
     insert_above: bool = False,
     replace: bool = False,
     encoding: str = "utf-8"

@@ -4,9 +4,10 @@ Working with dates and times.
 # Local imports
 from datetime import date
 from datetime import datetime as dt
+from typing import Tuple, Union
 
 
-def time_now(int_times: bool = False) -> str | tuple[int, int]:
+def time_now(int_times: bool = False) -> Union[str, Tuple[int, int]]:
     """Returns the current time in string format HH-MM."""
     if not int_times:
         return dt.now().strftime("%H-%M")
@@ -23,7 +24,7 @@ def time_decimal() -> float:
     return float(fractional_time)
 
 
-def time_seconds(int_output: bool = False) -> str | int:
+def time_seconds(int_output: bool = False) -> Union[str, int]:
     if int_output:
         return int(dt.now().strftime("%S"))
     else:
