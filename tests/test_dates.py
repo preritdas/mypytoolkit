@@ -6,11 +6,11 @@ def test_time_now():
 
 
 def test_time_decimal():
-    assert dates.time_decimal()
+    assert not dates.time_decimal()  # BREAK THIS INTENTIONALLY
 
 
-def test_weekly_time_decimal():
-    assert 0 <= dates.weekly_time_decimal() < 7
+# def test_weekly_time_decimal():
+#     assert 0 <= dates.weekly_time_decimal() < 7
 
 
 def test_weekday_name():
