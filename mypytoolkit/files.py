@@ -10,12 +10,13 @@ class Document:
         # Ensure path exists
         if not os.path.exists(path):
             raise FileNotFoundError("No file could be found at the provided path.")
-        
+
         self.path = path
 
+        @property
         def contents(self) -> str:
-            with open(self.directory, 'r') as f: self.contents = f.read()
-            return self.contents
+            with open(self.path, 'r', encoding="utf-8") as f: 
+                return f.read()
 
 
 def are_docs_same(original_dir: str, new_dir: str) -> bool:
@@ -36,7 +37,7 @@ def are_docs_same(original_dir: str, new_dir: str) -> bool:
 def append_by_query(
     query: str, 
     content: str, 
-    file: str | Document, 
+    file: Document, 
     insert_above: bool = False,
     replace: bool = False,
     encoding: str = "utf-8"
