@@ -4,6 +4,7 @@ on:
   push:
     paths-ignore: 
       - setup.py
+      - README.md
   pull_request:
 
 jobs:
