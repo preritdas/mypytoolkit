@@ -1,6 +1,10 @@
 name: tests
 
-on: [push, pull_request]
+on: 
+  push:
+    paths-ignore: 
+      - setup.py
+  pull_request:
 
 jobs:
   test:
