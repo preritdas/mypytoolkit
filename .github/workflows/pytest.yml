@@ -37,7 +37,7 @@ jobs:
           python -m pytest --cov
 
       - name: Update coverage badge
-        if: always()
+        if: ${{ matrix.python == '3.9' }}
         continue-on-error: true
         uses: knicknic/os-specific-run@v1.0.3
         with:
