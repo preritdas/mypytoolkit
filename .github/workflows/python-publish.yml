@@ -2,6 +2,9 @@ name: pypi deployment
 
 
 on:
+  push:
+    paths:
+      - setup.py
   workflow_run:
     workflows: ["tests"]
     branches: [master]
