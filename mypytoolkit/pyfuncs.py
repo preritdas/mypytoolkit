@@ -37,6 +37,26 @@ def reverse_dict(dic: dict) -> dict:
     return {val: key for key, val in dic.items()}
 
 
+def reorder_dict(order: list, dic: dict) -> dict:
+    """
+    Reorders the dictionary according the list of values.
+    If there are keys in the dictionary not included in `order`, they
+    are included at the end of the dictionary in their original order.
+    """
+    if not all(key in dic for key in order):
+        raise ValueError("Key given in order that's not present in the dict.")
+
+    original_keys = list(dic.keys())
+    remainder = original_keys
+    for key in order: remainder.remove(key)
+
+    return_dict = {key: dic[key] for key in order}
+    for key in remainder:
+        return_dict[key] = dic[key]
+    
+    return return_dict
+
+
 def remove_nan_df_rows(df: pd.DataFrame) -> pd.DataFrame:
     """
     Removes any rows from a DataFrame that contain
