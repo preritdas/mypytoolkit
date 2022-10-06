@@ -6,15 +6,16 @@ import pandas as pd
 import numpy as np
 
 # Local imports
-from typing import Any
+from typing import Any, Iterable, Type
 
 
-def tprint(arg) -> None:
+def tprint(arg) -> Any | Type:
     """Prints the contents of a variable/object along with its type."""
     print(arg, type(arg))
+    return arg, type(arg)
 
 
-def closest_value(iterable, value, return_idx=False) -> Any:
+def closest_value(iterable: Iterable, value: Any, return_idx=False) -> Any:
     """Returns the index of the closest occurance of
     `value` in `iterable`."""
     differences = list(map(lambda item: abs(value - item), iterable))
