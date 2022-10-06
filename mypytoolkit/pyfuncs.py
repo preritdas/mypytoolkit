@@ -6,10 +6,10 @@ import pandas as pd
 import numpy as np
 
 # Local imports
-from typing import Any, Iterable, Type
+from typing import Any, Iterable, Type, Union
 
 
-def tprint(arg) -> Any | Type:
+def tprint(arg) -> Union[Any, Type]:
     """Prints the contents of a variable/object along with its type."""
     print(arg, type(arg))
     return arg, type(arg)
