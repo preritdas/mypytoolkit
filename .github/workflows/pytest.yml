@@ -3,9 +3,9 @@ name: tests
 on: 
   push:
     paths-ignore: 
-      - setup.py
       - README.md
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
