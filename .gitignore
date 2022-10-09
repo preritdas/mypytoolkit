@@ -1,0 +1,10 @@
+venv/
+wsl_venv/
+win_venv/
+winvenv/
+xps_venv/
+build/
+mypytoolkit.egg-info
+.DS_Store
+__pycache__/
+.coverage
