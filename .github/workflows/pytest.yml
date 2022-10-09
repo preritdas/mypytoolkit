@@ -4,6 +4,7 @@ on:
   push:
     paths-ignore: 
       - README.md
+      - setup.py
   pull_request:
   workflow_dispatch:
 
