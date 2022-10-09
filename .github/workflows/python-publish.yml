@@ -2,20 +2,47 @@ name: pypi deployment
 
 
 on:
-  workflow_run:
-    workflows: ["tests"]
-    branches: [master]
-    types:
-      - completed
-
-
-permissions:
-  contents: read
+  push:
+    paths:
+      - setup.py
+  workflow_dispatch:
 
 
 jobs:
+  test:
+  
+    strategy:
+      matrix:
+        os: ["ubuntu-latest", "macos-latest", "windows-latest"]
+        python: ["3.6", "3.7", "3.8", "3.9", "3.10"]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install package dependencies
+        run: |
+          python -m pip install -U pip wheel
+          pip install -r requirements.txt
+
+      - name: Install test dependencies
+        run: |
+          pip install -U pytest
+
+      - name: Run tests with pytest
+        run: |
+          python -m pytest
+
+
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
