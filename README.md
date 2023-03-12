@@ -49,6 +49,12 @@ while True:
 
 Simple Python-specific tools to make life easier, from `print` options to functions for working with iterables.
 
+### Threaded List Processing
+
+the `kit.threadtools` module comes with a function, `list_process`, that makes it easy to send a list of items to an operation to be processed in threads. The return value of a thread cannot be accessed directly, and using a `queue.Queue` doesn't guarantee the resulting list comes back in the right order. `kit.threadtools.list_process` will take an `operation` function and `items` (list of items to process) and will send them to individual threads for processing, then collect all the results and return them in the _same_ order. 
+
+This is useful for API calls, file operations, and other I/O-bound tasks. 
+
 ### Type Printing
 
 `kit.tprint()` displays the contents of an object along with its type. I got fed up of constantly writing `print(obj, type(obj))` when debugging so I found myself constantly defining a `tprint()` function:
