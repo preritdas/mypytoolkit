@@ -1,5 +1,5 @@
 """Exponential backoff decorator."""
-from typing import Callable, Tuple
+from typing import Callable, Tuple, Union
 from functools import wraps
 
 import time
@@ -9,7 +9,7 @@ import random
 def exponential_backoff(
     retries: int = 5,
     base_delay: float = 1,
-    exceptions: BaseException | Tuple[BaseException] = (Exception,),
+    exceptions: Union[BaseException, Tuple[BaseException]] = (Exception,),
     exception_string_match: str = ""
 ) -> Callable:
     """
