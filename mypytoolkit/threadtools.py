@@ -41,7 +41,7 @@ def list_process(operation: Callable, items: List) -> List:
             result_queue.put((index, result))
 
     threads = [
-        threading.Thread(target=store_result, args=(text, index, result_queue)) 
+        threading.Thread(target=store_result, args=(item, index, result_queue)) 
             for index, item in enumerate(items)
     ]
 
