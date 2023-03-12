@@ -12,3 +12,6 @@ from mypytoolkit.pyfuncs import *
 
 # Finance
 from mypytoolkit import finance
+
+# Threads
+from mypytoolkit import threadtools
